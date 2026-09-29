@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Skörd",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Samla länkar i listor och kopiera dem till Claude med ett tryck.",
   "permissions": ["storage", "tabs", "contextMenus", "offscreen", "alarms", "clipboardWrite"],
   "background": { "service_worker": "background.js", "type": "module" },

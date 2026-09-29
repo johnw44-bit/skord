@@ -83,3 +83,7 @@ Inget skickas någonstans; allt ligger i `chrome.storage.local`.
 ```
 node test.mjs
 ```
+
+## Licens
+
+MIT — se [LICENSE](LICENSE).
