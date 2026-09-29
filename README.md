@@ -31,6 +31,20 @@ https://github.com/c/d
 3. **Läs in okomprimerat** → välj mappen.
 4. Öppna `brave://extensions/shortcuts` och kontrollera att kortkommandona är satta (de sätts inte automatiskt om de krockar med något annat).
 
+## Popupen (Alt+S)
+
+- **Flikarna** överst = listorna med antal. Klick gör listan *aktiv* (den Ctrl+Q kopierar).
+- **×** tar bort en enskild länk.
+- **Förskriven text** redigeras direkt; sparas när du klickar utanför fältet.
+- **Kopiera** kopierar listan och stänger popupen. **Töm** rensar listan.
+
+## Uppdatera
+
+1. `git pull` (eller ladda ner ny release).
+2. `brave://extensions` → ↻ vid Skörd.
+
+Listor, texter och kortkommandon du redan har behålls — ändrade standardvärden i en ny version gäller bara nya installationer. Flyttar du mappen måste tillägget tas bort och läsas in igen; då töms listorna och kortkommandona måste sättas om.
+
 ## Egna listor
 
 Klicka på ikonen → **Listor & regler (JSON)**. Varje lista:
@@ -42,11 +56,27 @@ Klicka på ikonen → **Listor & regler (JSON)**. Varje lista:
 
 - `match` — regex mot URL:en; första träffen vinner. Tom = används bara som fallback.
 - `ttlMin` — minuter innan en länk försvinner (`0` = aldrig).
+- `clearAfterCopy` — töm listan efter kopiering.
+- `template` — texten överst vid kopiering. Tom = bara länkarna.
 - `ovrigt` och `klipp` måste finnas.
 
-## Begränsning
+Listan *Klipp* tar emot kopierad text utan länkar; vid kopiering kommer en text per rad (radbrytningar i texten behålls).
 
-Ctrl+C i **adressfältet** syns inte för tillägg — använd Ctrl+S där.
+## Begränsningar
+
+- Ctrl+C i **adressfältet** syns inte för tillägg — använd Ctrl+S där.
+- Högerklick → **Kopiera länkadress** fångas inte — använd **Skörda** i samma meny.
+- Ctrl+S är Braves "Spara sida"; om Brave inte släpper det, välj t.ex. Ctrl+Shift+S i `brave://extensions/shortcuts`.
+
+## Behörigheter & integritet
+
+- **Innehållsskript på alla sidor** — läser det du markerat *när du trycker Ctrl+C*, inget annat.
+- **tabs** — läsa URL:en på markerade flikar vid Ctrl+S.
+- **storage, alarms** — spara listorna lokalt, rensa gamla länkar varje minut.
+- **offscreen, clipboardWrite** — skriva till urklippet vid Ctrl+Q.
+- **contextMenus** — högerklicksvalet Skörda.
+
+Inget skickas någonstans; allt ligger i `chrome.storage.local`.
 
 ## Test
 
