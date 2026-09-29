@@ -1,0 +1,35 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  :root { --bg: #fff; --fg: #1c1c1c; --mute: #6b6b6b; --line: #e3e3e3; --acc: #2f7d32; --accfg: #fff; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #1e1f22; --fg: #e8e8e8; --mute: #9a9a9a; --line: #34363a; --acc: #5fae63; --accfg: #0d1a0e; } }
+  body { width: 380px; margin: 0; padding: 12px; background: var(--bg); color: var(--fg); font: 13px system-ui, sans-serif; }
+  #tabs { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 8px; }
+  #tabs button { border: 1px solid var(--line); background: none; color: var(--fg); border-radius: 14px; padding: 4px 10px; cursor: pointer; }
+  #tabs button.on { background: var(--acc); color: var(--accfg); border-color: var(--acc); }
+  ul { list-style: none; margin: 0; padding: 0; max-height: 240px; overflow: auto; border-top: 1px solid var(--line); }
+  li { display: flex; gap: 6px; padding: 4px 0; border-bottom: 1px solid var(--line); }
+  li span { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  li button { border: 0; background: none; color: var(--mute); cursor: pointer; }
+  .empty { color: var(--mute); padding: 12px 0; }
+  textarea { width: 100%; box-sizing: border-box; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 6px; font: inherit; resize: vertical; }
+  label { display: block; color: var(--mute); margin: 10px 0 4px; }
+  .row { display: flex; gap: 6px; margin-top: 10px; }
+  .row button { padding: 8px 12px; border-radius: 6px; border: 1px solid var(--line); background: none; color: var(--fg); cursor: pointer; }
+  #copy { flex: 1; background: var(--acc); color: var(--accfg); border-color: var(--acc); font-weight: 600; }
+  details { margin-top: 10px; color: var(--mute); }
+  #err { color: #d33; }
+  .hint { color: var(--mute); margin-top: 10px; font-size: 12px; }
+</style>
+<div id="tabs"></div>
+<ul id="items"></ul>
+<label for="tpl">Förskriven text</label>
+<textarea id="tpl" rows="3"></textarea>
+<div class="row"><button id="copy"></button><button id="clear">Töm</button></div>
+<details>
+  <summary>Listor &amp; regler (JSON)</summary>
+  <textarea id="json" rows="12"></textarea>
+  <div class="row"><button id="save">Spara</button><span id="err"></span></div>
+</details>
+<div class="hint">Alt+S skördar flik · Alt+Shift+C kopierar aktiv lista · ändra i brave://extensions/shortcuts</div>
+<script src="popup.js"></script>

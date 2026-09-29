@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Skörd",
+  "version": "0.1.0",
+  "description": "Samla länkar i listor och kopiera dem till Claude med ett tryck.",
+  "permissions": ["storage", "tabs", "contextMenus", "offscreen", "alarms", "clipboardWrite"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": { "default_popup": "popup.html", "default_title": "Skörd" },
+  "content_scripts": [{ "matches": ["<all_urls>"], "js": ["content.js"], "run_at": "document_start" }],
+  "commands": {
+    "add-tabs": { "suggested_key": { "default": "Alt+S" }, "description": "Skörda aktuell flik (eller alla markerade)" },
+    "copy-active": { "suggested_key": { "default": "Alt+Shift+C" }, "description": "Kopiera aktiv lista till urklipp" }
+  }
+}
