@@ -3,7 +3,7 @@
 export const DEFAULT_LISTS = [
   {
     id: 'github', name: 'GitHub', match: '^https?://github\\.com/', ttlMin: 60, clearAfterCopy: true,
-    template: 'Researcha varje GitHub-repo nedan. För varje: syfte, stjärnor/aktivitet, senaste release, licens, styrkor/svagheter och alternativ. Avsluta med en jämförelsetabell.',
+    template: 'Researcha varje GitHub-repo nedan om det är något vi kan använda eller låna:',
   },
   {
     id: 'ovrigt', name: 'Övrigt', match: '', ttlMin: 60, clearAfterCopy: true,
