@@ -17,7 +17,7 @@ Byggt för research: samla 20 GitHub-repon, tryck en tangent, klistra in i Claud
 Resultat vid inklistring:
 
 ```
-Researcha varje GitHub-repo nedan. För varje: syfte, stjärnor/aktivitet, …
+Researcha varje GitHub-repo nedan om det är något vi kan använda eller låna:
 
 https://github.com/a/b
 https://github.com/c/d
