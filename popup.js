@@ -29,7 +29,7 @@ function render() {
     li.append(span, x);
     return li;
   }));
-  if (!items.length) $('#items').innerHTML = '<li class="empty">Tomt. Alt+S eller Ctrl+C på en sida.</li>';
+  if (!items.length) $('#items').innerHTML = '<li class="empty">Tomt. Ctrl+S eller Ctrl+C på en sida.</li>';
 
   $('#tpl').value = cur.template;
   $('#tpl').onchange = () => { cur.template = $('#tpl').value; refresh({ cmd: 'lists', lists: st.lists }); };

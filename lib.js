@@ -57,7 +57,7 @@ export function purge(s, now = Date.now()) {
 export function put(s, list, text, now = Date.now()) {
   s.items = s.items.filter(i => !(i.list === list && i.text === text));
   s.items.push({ list, text, ts: now });
-  if (list !== 'klipp') s.active = list; // copying page text must not steal Alt+Shift+C from the link list
+  if (list !== 'klipp') s.active = list; // copying page text must not steal Ctrl+Q from the link list
 }
 
 export function addUrl(s, raw) {

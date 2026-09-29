@@ -1,4 +1,4 @@
-// Catches Ctrl+C on web pages (not the address bar — use Alt+S for that).
+// Catches Ctrl+C on web pages (not the address bar — use Ctrl+S for that).
 document.addEventListener('copy', () => {
   const el = document.activeElement;
   let t = String(getSelection());

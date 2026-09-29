@@ -6,10 +6,11 @@ Byggt för research: samla 20 GitHub-repon, tryck en tangent, klistra in i Claud
 
 ## Funktioner
 
-- **Alt+S** — skörda aktuell flik (eller alla markerade flikar, Ctrl/Shift-klick).
+- **Alt+S** — öppna popupen.
+- **Ctrl+S** — skörda aktuell flik (eller alla markerade flikar, Ctrl/Shift-klick).
 - **Ctrl+C på en sida** — URL:er i det kopierade plockas ut automatiskt. Text utan länkar hamnar i listan *Klipp*.
 - **Högerklick → Skörda** — länk, markerad text eller sidan.
-- **Alt+Shift+C** — kopierar aktiv lista (den du senast lade till i). Ikonen visar ✓.
+- **Ctrl+Q** — kopierar aktiv lista (den du senast lade till i). Ikonen visar ✓.
 - **Automatisk sortering** — `github.com/*` → GitHub-listan, övrigt → Övrigt. Egna regler via regex.
 - **Städning** — dubbletter och spårningsparametrar (`utm_*`, `fbclid`, …) tas bort, GitHub-länkar kortas till `github.com/ägare/repo`, allt äldre än 60 min försvinner.
 - Allt lagras lokalt i webbläsaren. Inget konto, ingen server, inga beroenden.
@@ -45,7 +46,7 @@ Klicka på ikonen → **Listor & regler (JSON)**. Varje lista:
 
 ## Begränsning
 
-Ctrl+C i **adressfältet** syns inte för tillägg — använd Alt+S där.
+Ctrl+C i **adressfältet** syns inte för tillägg — använd Ctrl+S där.
 
 ## Test
 
